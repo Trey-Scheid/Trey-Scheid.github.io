@@ -1,2 +1,2 @@
-# dsc106.github.io
+# trey-scheid.github.io
 site
