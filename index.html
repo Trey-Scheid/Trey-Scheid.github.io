@@ -3,63 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trey Scheid | Portfolio</title>
+    <title>Welcome to My Website</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
+        <div class="logo">
+            <h1>Scheid Studios</h1>
+        </div>
         <nav>
             <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <!-- <li><a href="#">Home</a></li> -->
+                <li><a href="#about-anchor">About</a></li>
+                <li><a href="#portfolio-anchor">Portfolio</a></li>
+                <li><a href="#contact-anchor">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="hero">
-            <h1>Trey Scheid</h1>
-            <p>UCSD Computer Science Graduate</p>
-        </section>
+    <section class="hero">
+        <video autoplay muted loop class="video-bg">
+            <source src="hexpattern.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h2>Trey Scheid</h2>
+            <p>A brief tagline or description</p>
+            <a href="mailto:trey11sport@gmail.com" class="cta-button">Contact Me</a>
+        </div>
+    </section>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I'm a soon-to-be graduate from UCSD with a major in Computer Science. I have a passion for coding, problem-solving, and building innovative applications.
-            </p>
-        </section>
+    <section class="about" id="about-anchor">
+        <h3>About Me</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>Project 1</h3>
-                <p>Description of project 1.</p>
+    <section class="portfolio" id="portfolio-anchor">
+        <h3 class="portfolio-title">Portfolio</h3>
+        <div class="portfolio-background">
+            <!-- <video autoplay muted loop class="video-bg-scroll">
+                <source src="flowingribbon.mp4" type="video/mp4">
+            </video>             -->
+        </div>
+        <div class="portfolio-items">
+            <div class="portfolio-item">
+                <img src="image1.jpg" alt="Project 1">
+                <h4>Project 1</h4>
+                <p>Description of Project 1</p>
             </div>
-            <div class="project">
-                <h3>Project 2</h3>
-                <p>Description of project 2.</p>
+            <div class="portfolio-item">
+                <img src="image2.jpg" alt="Project 2">
+                <h4>Project 2</h4>
+                <p>Description of Project 2</p>
             </div>
-            <div class="project">
-                <h3>Project 3</h3>
-                <p>Description of project 3.</p>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Feel free to reach out to me via:</p>
-            <ul>
-                <li>Email: john.doe@example.com</li>
-                <li>LinkedIn: linkedin.com/in/johndoe</li>
-                <li>GitHub: github.com/johndoe</li>
-            </ul>
-        </section>
-    </main>
+    <section class="contact" id="contact-anchor">
+        <h3>Contact Me</h3>
+        <p>Email: trey11sport@gmail.com</p>
+        <p>Phone: 925-457-2134</p>
+    </section>
 
     <footer>
         <p>&copy; 2023 Trey Scheid. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
