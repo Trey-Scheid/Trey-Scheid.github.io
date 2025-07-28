@@ -1,2 +1,2 @@
 # trey-scheid.github.io
-site
+My Personal Website

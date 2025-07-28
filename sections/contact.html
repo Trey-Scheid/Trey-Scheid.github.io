@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trey Scheid</title>
+    <script src = '../script.js'></script>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" type="image/x-icon" href="../assets/icons/favicon.svg">
+</head>
+<body>
+    <section class = 'top-header'>
+        <a class = 'name' href = "../index.html">Trey Scheid</h1>
+        <section class = 'wide-sections'>
+            <a class = 'section-text' style = 'left: 50px' href = 'aboutme.html'>experience</a>
+            <a class = 'section-text' style = 'left: 170px' href = 'projects.html'>projects</a>
+            <a class = 'section-text' style = 'right: 150px' href = 'photography.html'>photography</a>
+            <a class = 'section-text' style = 'right: 50px' href = 'contact.html'>contact</a>
+        </section>
+        <button class = 'hamburger-menu' onclick = 'expand_menu()'>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </section>
+    <div id="myNav" class="overlay">
+        <a class="closebtn" onclick="close_menu()">&times;</a>
+        <div class="overlay-content">
+            <a href="aboutme.html">about me</a>
+            <a href="projects.html">projects</a>
+            <a href="photography.html">photography</a>
+            <a href="contact.html">contact</a>
+        </div>
+    </div>
+    <section class = "hp-subsections" id = "aboutme">
+
+        <div class = "container"><!--data-aos = "fade-up" data-aos-duration = "1000">-->
+            <div class = "left-text-container">
+                <h1 class = 'text-container-title'>reach out!</h1>
+                <h1 class = 'title-text'>You can reach out to me using this form. You can also connect with me via LinkedIn, or check out my socials linked below. I look forward to hearing from you!</h1>
+                <div class = 'logo-container'>
+                    <a href = 'https://www.linkedin.com/in/treyscheid/' target = '_blank'><img class = 'logos' src = '../assets/icons/linkedin-logo.svg'></a>
+                    <a href = 'https://www.github.com/trey-scheid/' target = '_blank'><img class = 'logos' src = '../assets/icons//github-logo.svg'></a>
+                    <a href = 'https://www.instagram.com/trey11scheid/' target = '_blank'><img class = 'logos' src = '../assets/icons//ig-logo.svg'></a>
+                </div>
+            </div>
+            #TODO contact form here.
+            <!-- <div class = "img-container">
+                <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xyyqavkr" method="post">
+                    <fieldset class = "email-form" id="fs-frm-inputs">
+                        <div class = "form-element-div">
+                            <div class = "form">
+                                <label for="full-name">Full Name</label>
+                                <br>
+                                <input type="text" name="name" placeholder = "Full Name" id="full-name"required>
+                                <br>
+                            </div>
+                            <div class = "form">
+                                <label for="email-address">Email Address</label>
+                                <br>
+                                <input type="email" name="_replyto" id="email-address" placeholder="you@email.com" required>
+                            </div>
+                        </div>
+                        <div class = "form-element-div">
+                            <div class = 'form' id = 'message'>
+                                <label for="message">Message</label>
+                                <br>
+                                <textarea rows="5" name="message" id="message" placeholder="Hi! Let's get in touch." required=""></textarea>
+                                <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+                                <br>
+                                <input type="submit" value="Submit">
+                            </div>
+                        </div>
+                    </fieldset>
+                    
+                </form>
+            </div> -->
+        </div>
+    </section>
+    <hr/>
+    
+</body>
+</html>

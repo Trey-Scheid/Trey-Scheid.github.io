@@ -3,71 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Trey Scheid</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src = 'script.js'></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.svg">
+    <meta name="google-site-verification" content="Dlsq1EGc58T0NbOY8ozPItQHqyVvf_nVGa2QyMuxF0E" />
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>Scheid Studios</h1>
-        </div>
-        <nav>
-            <ul>
-                <!-- <li><a href="#">Home</a></li> -->
-                <li><a href="#about-anchor">About</a></li>
-                <li><a href="#portfolio-anchor">Portfolio</a></li>
-                <li><a href="#contact-anchor">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <video autoplay muted loop class="video-bg">
-            <source src="hexpattern.mp4" type="video/mp4">
-        </video>
-        <div class="hero-content">
-            <h2>Trey Scheid</h2>
-            <p>A brief tagline or description</p>
-            <a href="mailto:trey11sport@gmail.com" class="cta-button">Contact Me</a>
-        </div>
+    <section class = 'top-header'>
+        <a class = 'name' href = "index.html">Trey Scheid</h1>
+        <section class = 'wide-sections'>
+            <a class = 'section-text' style = 'left: 50px' href = 'sections/aboutme.html'>experience</a>
+            <a class = 'section-text' style = 'left: 170px' href = 'sections/projects.html'>projects</a>
+            <a class = 'section-text' style = 'right: 150px' href = 'sections/photography.html'>photography</a>
+            <a class = 'section-text' style = 'right: 50px' href = 'sections/contact.html'>contact</a>
+        </section>
+        <button class = 'hamburger-menu' onclick = 'expand_menu()'>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
     </section>
-
-    <section class="about" id="about-anchor">
-        <h3>About Me</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </section>
-
-    <section class="portfolio" id="portfolio-anchor">
-        <h3 class="portfolio-title">Portfolio</h3>
-        <div class="portfolio-background">
-            <!-- <video autoplay muted loop class="video-bg-scroll">
-                <source src="flowingribbon.mp4" type="video/mp4">
-            </video>             -->
+    <div id="myNav" class="overlay">
+        <a class="closebtn" onclick="close_menu()">&times;</a>
+        <div class="overlay-content">
+            <a href="sections/aboutme.html">about me</a>
+            <a href="sections/projects.html">projects</a>
+            <a href="sections/photography.html">photography</a>
+            <a href="sections/contact.html">contact</a>
         </div>
-        <div class="portfolio-items">
-            <div class="portfolio-item">
-                <img src="image1.jpg" alt="Project 1">
-                <h4>Project 1</h4>
-                <p>Description of Project 1</p>
+    </div>
+
+    <section class = "intro">
+        <div class = "container" data-aos = "fade-up" data-aos-duration = "1000">
+            <div class = "left-text-container">
+                <h1 class = 'title-text'>This is a work in progress, please hold tight.<br> css: <span class = 'day'>day class</span> <br> <span class = 'night'>night class</span> <span class = 'grey'>gray class</span></h1>
             </div>
-            <div class="portfolio-item">
-                <img src="image2.jpg" alt="Project 2">
-                <h4>Project 2</h4>
-                <p>Description of Project 2</p>
+            <div class = "img-container">
+                <img id = 'intro-image' src="assets/landing_page/earthrise.jpeg">
             </div>
         </div>
     </section>
+    <hr/>
 
-    <section class="contact" id="contact-anchor">
-        <h3>Contact Me</h3>
-        <p>Email: trey11sport@gmail.com</p>
-        <p>Phone: 925-457-2134</p>
+    <section class = "hp-subsections" id = "projects">
+
+        <div class = "container" data-aos = "fade-up" data-aos-duration = "1000">
+            <div class = "img-container">
+                <a href = "sections/projects.html"><img id = 'intro-image' src="assets/landing_page/with_glove.png"></a>
+            </div>
+            <div class = "right-text-container">
+                <a href = "sections/projects.html" style = "color: black;"><h1 class = 'text-container-title'>projects</h1></a>
+                <h1 class = 'title-text'>This will be about my projects. linked <a href = 'sections/projects.html' style = "color: black;">here</a>!</h1>
+            </div>
+        </div>
     </section>
+    <hr/>
 
-    <footer>
-        <p>&copy; 2023 Trey Scheid. All rights reserved.</p>
-    </footer>
+    <section class = "hp-subsections" id = "aboutme">
 
-    <script src="script.js"></script>
+        <div class = "container" data-aos = "fade-up" data-aos-duration = "1000">
+            <div class = "left-text-container">
+                <a href = "sections/aboutme.html" style = "color: black;"><h1 class = 'text-container-title'>about me</h1></a>
+                <h1 class = 'title-text'>This will be about me. And my <a href = 'assets/so_hirota_resume.pdf' target = '_blank' style = "color: black">experience</a>.</h1>
+            </div>
+            <div class = "img-container">
+                <a href = "sections/aboutme.html"><img loading = "lazy" id = 'intro-image' src="assets/landing_page/kiyomizu-2.JPG"></a>
+            </div>
+        </div>
+    </section>
+    <hr class = "bottom"/>
+
+    <!-- AOS library for animations -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 </body>
 </html>
