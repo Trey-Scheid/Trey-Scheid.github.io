@@ -309,6 +309,7 @@ a {
     align-items: center;       /* vertical alignment */
     gap: 2rem;                 /* space between items */
     padding: 15px 10px;
+    margin-top: 20px;
     font-size: 0.9rem;
     color: #555;
 }
