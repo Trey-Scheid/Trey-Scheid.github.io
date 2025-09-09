@@ -303,6 +303,22 @@ a {
     color: black;
 }
 
+.footer {
+    display: flex;
+    justify-content: center; /* keep the group centered */
+    align-items: center;     /* vertically align */
+    gap: 2rem;               /* space between items */
+    padding: 15px 10px;
+    font-size: 0.9rem;       /* smaller text */
+    color: #555;             /* subtle gray */
+    text-align: center;
+}
+
+.footer-text {
+    margin: 0;
+}
+
+
 h1.subsections-title {
     text-align: center;
     font-weight: 500;
