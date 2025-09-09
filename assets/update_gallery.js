@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const photo = document.createElement('img');
             photo.classList.add("photo");
-            photo.loading = "lazy"; // Lazy loading for better performance
+            // photo.loading = "lazy"; // Lazy loading for better performance
             
             // Attach event listener to the load event of each image
             photo.addEventListener('load', function() {
