@@ -305,18 +305,19 @@ a {
 
 .footer {
     display: flex;
-    justify-content: center; /* keep the group centered */
-    align-items: center;     /* vertically align */
-    gap: 2rem;               /* space between items */
+    justify-content: center;   /* centers the whole cluster */
+    align-items: center;       /* vertical alignment */
+    gap: 2rem;                 /* space between items */
     padding: 15px 10px;
-    font-size: 0.9rem;       /* smaller text */
-    color: #555;             /* subtle gray */
-    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
 }
 
 .footer-text {
     margin: 0;
+    display: inline;           /* keeps each <p> nice and compact */
 }
+
 
 
 h1.subsections-title {
