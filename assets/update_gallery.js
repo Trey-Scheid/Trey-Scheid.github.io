@@ -58,28 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         console.log(cols);
 
-        // let image_fps = [
-        //     ["../assets/photography/webp_photos/r2_tsuchinshan.jpeg", "\"The Comet\"<br>📍Crater Lake,<br>Oregon"],
-        //     ["../assets/photography/webp_photos/r1_milkyway.JPG", "\"The Milkyway\"<br>📍SDSU Observatory,<br>Julian, CA"],
-        //     ["../assets/photography/webp_photos/r1_towards_baybridge.JPG", "\"Towards Bay Bridge\"<br>📍California St,<br>San Francisco, CA"],
-        //     ["../assets/photography/webp_photos/r1_chinatown_pacific.JPG", "\"Towards the Pacific\"<br>📍California St,<br>San Francisco, CA"],
-        //     ["../assets/photography/webp_photos/r2_plastic_lens.JPG", "📍Gliderport,<br>San Diego, CA<br>shot with a disposable lens"],
-        //     ["../assets/photography/webp_photos/r2_national_masjid.JPG", "National Masjid<br>📍Kuala Lumpur, Malaysia"],
-        //     ["../assets/photography/webp_photos/r1_putra_masjid.JPG", "📍Putra Masjid,<br>Putrajaya, Malaysia"],
-        //     ["../assets/photography/webp_photos/r1_merdeka_with_masjid.JPG", "Sultan Abdul Samad Building<br>📍Kuala Lumpur, Malaysia"],
-        //     ["../assets/photography/webp_photos/r1_cat.JPG", "📍Subang Jaya,<br>Selangor, Malaysia"],
-        //     ["../assets/photography/webp_photos/r2_bamboo_everyone.JPG", "Bamboo Forest<br>📍Kyoto, Japan"],
-        //     ["../assets/photography/webp_photos/r1_blue_firework.JPG", "Tone River Firework Festival<br>📍Ibaraki, Japan"],
-        //     ["../assets/photography/webp_photos/r1_purple_firework.JPG", "Tone River Firework Festival<br>📍Ibaraki, Japan"],
-        //     ["../assets/photography/webp_photos/r1_blue_circle_firework.JPG", "Tone River Firework Festival<br>📍Ibaraki, Japan"],
-        //     ["../assets/photography/webp_photos/r1_spider_lily.JPG", "\"Spider Lily\"<br>📍Ibaraki, Japan"],
-        //     ["../assets/photography/webp_photos/r2_me_with_ethan.JPG", "Tone River banks<br>📍Ibaraki, Japan"],
-        //     ["../assets/photography/webp_photos/r2_bamboo_forest.JPG", "Bamboo Forest<br>📍Kyoto, Japan"],
-        //     ["../assets/photography/webp_photos/r1_skytree.JPG", "Tokyo Skytree<br>📍Asakusa, Tokyo"],
-        //     ["../assets/photography/webp_photos/r1_jiji.JPG", "\"Grandpa\"<br>📍Little Italy,<br>San Diego, CA"],
-        //     ["../assets/photography/webp_photos/r1_colorful_sunset.JPG", "📍Tierra del Sol,<br>San Diego, CA"]
-        // ]
-
         const image_fps = [
             ["../assets/photography/webp_photos//DSC05709.JPG", "template_string, description"],
             ["../assets/photography/webp_photos/phone_IMG_7589.HEIC","template_string, description"],
@@ -250,9 +228,47 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
 
+        // for (const image_fp_desc of image_fps) {
+        //     const image_fp = image_fp_desc[0]
+        //     const image_desc = image_fp_desc[1]
+
+        //     const photo_div = document.createElement('div');
+        //     photo_div.classList.add('gallery-photo');
+
+        //     const img_overlay = document.createElement('div');
+        //     img_overlay.classList.add("gallery-photo-overlay");
+
+        //     desc = document.createElement('p');
+        //     desc.classList.add("overlay-text");
+        //     desc.innerHTML = image_desc
+        //     img_overlay.appendChild(desc)
+
+        //     const photo = document.createElement('img');
+        //     photo.classList.add("photo");
+        //     // photo.loading = "lazy"; // Lazy loading for better performance
+            
+        //     // Attach event listener to the load event of each image
+        //     photo.addEventListener('load', function() {
+        //         // Append the loaded image to the photo_div
+        //         photo_div.appendChild(photo);
+                
+        //         // Find the shortest column
+        //         const shortestColumn = findShortestColumn(cols);
+                
+        //         // Append the photo_div to the shortest column
+        //         shortestColumn.appendChild(photo_div);
+        //         photo_div.appendChild(img_overlay);
+        //     });
+            
+        //     photo_div.appendChild(photo);
+        //     photo.src = image_fp;
+
+        // }
+
+
         for (const image_fp_desc of image_fps) {
-            const image_fp = image_fp_desc[0]
-            const image_desc = image_fp_desc[1]
+            const image_fp = image_fp_desc[0];
+            const image_desc = image_fp_desc[1];
 
             const photo_div = document.createElement('div');
             photo_div.classList.add('gallery-photo');
@@ -260,31 +276,28 @@ document.addEventListener('DOMContentLoaded', function() {
             const img_overlay = document.createElement('div');
             img_overlay.classList.add("gallery-photo-overlay");
 
-            desc = document.createElement('p');
+            const desc = document.createElement('p');
             desc.classList.add("overlay-text");
-            desc.innerHTML = image_desc
-            img_overlay.appendChild(desc)
+            desc.innerHTML = image_desc;
+            img_overlay.appendChild(desc);
 
             const photo = document.createElement('img');
             photo.classList.add("photo");
-            // photo.loading = "lazy"; // Lazy loading for better performance
-            
-            // Attach event listener to the load event of each image
-            photo.addEventListener('load', function() {
-                // Append the loaded image to the photo_div
-                photo_div.appendChild(photo);
-                
-                // Find the shortest column
-                const shortestColumn = findShortestColumn(cols);
-                
-                // Append the photo_div to the shortest column
-                shortestColumn.appendChild(photo_div);
-                photo_div.appendChild(img_overlay);
-            });
-            
-            photo_div.appendChild(photo);
-            photo.src = image_fp;
+            photo.loading = "lazy"; // good for perf
 
+            // Only append once the image is loaded
+            photo.addEventListener('load', function() {
+                photo_div.appendChild(photo);
+                photo_div.appendChild(img_overlay);
+
+                // Ensure the browser has measured the column heights
+                requestAnimationFrame(() => {
+                    const shortestColumn = findShortestColumn(cols);
+                    shortestColumn.appendChild(photo_div);
+                });
+            });
+
+            photo.src = image_fp;
         }
 
 
