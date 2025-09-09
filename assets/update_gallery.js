@@ -59,9 +59,13 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(cols);
 
         const image_fps = [
-            ["../assets/photography/webp_photos//DSC05709.JPG", "template_string, description"],
-            ["../assets/photography/webp_photos/phone_IMG_7589.HEIC","template_string, description"],
-            ["../assets/photography/webp_photos/25_photographs_10DSC05622.webp", "template_string, description"],
+            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty"],
+            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty"],
+            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty"],
+            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty"],
+            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty"],
+            // ["../assets/photography/webp_photos/phone_IMG_7589.HEIC","fish"],
+            // ["../assets/photography/webp_photos/25_photographs_10DSC05622.webp", "#10"],
             // ["../assets/photography/webp_photos/25_photographs_11DSC05414.webp", "template_string, description"],
             // ["../assets/photography/webp_photos/25_photographs_14DSC05388.webp", "template_string, description"],
             // ["../assets/photography/webp_photos/25_photographs_16DSC05318.webp", "template_string, description"],
@@ -187,7 +191,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // ["../assets/photography/webp_photos/phone_IMG_0620.webp", "template_string, description"],
             // ["../assets/photography/webp_photos/phone_IMG_1188_Original.webp", "template_string, description"],
             // ["../assets/photography/webp_photos/phone_IMG_6237_Original.webp", "template_string, description"],
-            ["../assets/photography/webp_photos/phone_IMG_6238_Original.webp", "template_string, description"]
+            // ["../assets/photography/webp_photos/phone_IMG_6238_Original.webp", "phone"]
+            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty"]
         ]
 
         
