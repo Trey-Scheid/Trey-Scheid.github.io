@@ -9,7 +9,7 @@ to WebP format using Pillow (Python).
 Usage:
     python convert_to_webp.py <input_directory> <output_directory>
 e.g.
-    python convert_to_webp.py ./assets/photography ./assets/photography_webp
+    python convert_to_webp.py ./assets/photography/webp_photos ./assets/photography/webp_photos_webp
 
 
 Dependencies:
@@ -31,8 +31,8 @@ from pathlib import Path
 from PIL import Image
 
 # DEFAULT ARGUMENTS FOR TREY
-input_dir = "./assets/photography_original"
-output_dir = "./assets/photography"
+input_dir = "./assets/photography/webp_photos/original_photos"
+output_dir = "./assets/photography/webp_photos/webp_photos"
 
 def convert_to_webp(input_path=input_dir, output_path=output_dir, lossless=False, quality=80):
     """
