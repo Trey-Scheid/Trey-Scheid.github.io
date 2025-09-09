@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (screenWidth < 500) {
             console.log('screen small');
-            gallery.style.setProperty('grid-template-columns', 'repeat(1, minmax(0px, 1fr))');
+            gallery.style.setProperty('grid-template-columns', 'repeat(1, minmax(0px, 300px))');// 1fr
             // Single column layout
             const galleryColumn = document.createElement('div');
             galleryColumn.classList.add('gallery-col');
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             gallery.appendChild(galleryColumn);
         } else if (screenWidth <= 1000) {
             console.log('screen mid');
-            gallery.style.setProperty('grid-template-columns', 'repeat(2, minmax(0px, 1fr))');
+            gallery.style.setProperty('grid-template-columns', 'repeat(2, minmax(0px, 300px))');
             
             // Two columns layout
             for (let i = 0; i < 2; i++) {
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         } else if (screenWidth <= 2500) {
             console.log('screen big');
-            gallery.style.setProperty('grid-template-columns', 'repeat(3, minmax(0px, 1fr))');
+            gallery.style.setProperty('grid-template-columns', 'repeat(3, minmax(0px, 300px))');
 
             // Default layout (three columns)
             for (let i = 0; i < 3; i++) {
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         } else {
             console.log('screen extra big');
-            gallery.style.setProperty('grid-template-columns', 'repeat(4, minmax(0px, 1fr))');
+            gallery.style.setProperty('grid-template-columns', 'repeat(4, minmax(0px, 300px))');
 
             // Default layout (three columns)
             for (let i = 0; i < 4; i++) {
