@@ -81,6 +81,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // ]
 
         const image_fps = [
+            ["../assets/photography/webp_photos//DSC05709.JPG", "template_string, description"],
+            ["../assets/photography/webp_photos/phone_IMG_7589.HEIC","template_string, description"],
             ["../assets/photography/webp_photos/25_photographs_10DSC05622.webp", "template_string, description"],
             ["../assets/photography/webp_photos/25_photographs_11DSC05414.webp", "template_string, description"],
             ["../assets/photography/webp_photos/25_photographs_14DSC05388.webp", "template_string, description"],
