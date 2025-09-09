@@ -24,17 +24,17 @@ Notes:
     - handles .jpg, .jpeg, .png, .tiff, .bmp, and .gif formats.
     - does not handle any RAW, pdf, svg, ico, heic, avif formats.
 """
-
+import argparse
 import os
 import sys
 from pathlib import Path
 from PIL import Image
 
 # DEFAULT ARGUMENTS FOR TREY
-input_dir = "./assets/photography/webp_photos/original_photos"
-output_dir = "./assets/photography/webp_photos/webp_photos"
+default_input_dir = "./assets/photography/original_photos"
+default_output_dir = "./assets/photography/webp_photos"
 
-def convert_to_webp(input_path=input_dir, output_path=output_dir, lossless=False, quality=80):
+def convert_to_webp(input_path, output_path, lossless=False, quality=80):
     """
     Convert a single image file to WebP format.
 
@@ -103,13 +103,11 @@ def batch_convert(input_dir, output_dir):
 
     print(f"\nConversion complete! {count} files converted, {skipped} skipped.")
 
-def main():
-    if len(sys.argv) != 3:
-        print("Usage: python convert_to_webp.py <input_directory> <output_directory>")
-        sys.exit(1)
-
-    input_dir = Path(sys.argv[1]).resolve()
-    output_dir = Path(sys.argv[2]).resolve()
+def main(input_dir, output_dir):
+    print(f"Input directory: {input_dir}")
+    print(f"Output directory: {output_dir}")
+    input_dir = Path(input_dir)
+    output_dir = Path(output_dir)
 
     if not input_dir.exists() or not input_dir.is_dir():
         print(f"Error: Input directory '{input_dir}' does not exist or is not a directory.")
@@ -119,4 +117,21 @@ def main():
     batch_convert(input_dir, output_dir)
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(
+        description="Convert images to WebP format."
+    )
+    parser.add_argument(
+        "input_dir",
+        nargs="?",  # makes it optional
+        default=os.path.join(os.getcwd(), default_input_dir),
+        help="Path to input directory (default: ./assets/photography/original_photos)"
+    )
+    parser.add_argument(
+        "output_dir",
+        nargs="?",  # makes it optional
+        default=os.path.join(os.getcwd(), default_output_dir),
+        help="Path to output directory (default: ./assets/photography/webp_photos)"
+    )
+
+    args = parser.parse_args()
+    main(args.input_dir, args.output_dir)
