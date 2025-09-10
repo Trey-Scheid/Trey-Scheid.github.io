@@ -59,6 +59,9 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(cols);
 
         let image_fps = [
+            ["../assets/photography/webp_photos/DSC05709.JPG", "JPG"],
+            ["../assets/photography/webp_photos/DSC05709.avif", "AVIF"],
+            ["../assets/photography/webp_photos/25_photographs_5DSC05390.webp", "WEBP"],            
             ["../assets/photography/webp_photos/r2_tsuchinshan.jpeg", "\"The Comet\"<br>📍Crater Lake,<br>Oregon"],
             ["../assets/photography/webp_photos/r2_tsuchinshan.jpeg", "\"The Comet\"<br>📍Crater Lake,<br>Oregon"],
             ["../assets/photography/webp_photos/r2_tsuchinshan.jpeg", "\"The Comet\"<br>📍Crater Lake,<br>Oregon"],
