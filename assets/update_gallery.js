@@ -254,16 +254,17 @@ document.addEventListener('DOMContentLoaded', function() {
             photo.classList.add("photo");
             // photo.loading = "lazy"; // good for perf
 
-            // Only append once the image is loaded
+            // Attach event listener to the load event of each image
             photo.addEventListener('load', function() {
+                // Append the loaded image to the photo_div
                 photo_div.appendChild(photo);
+                
+                // Find the shortest column
+                const shortestColumn = findShortestColumn(cols);
+                
+                // Append the photo_div to the shortest column
+                shortestColumn.appendChild(photo_div);
                 photo_div.appendChild(img_overlay);
-
-                // Ensure the browser has measured the column heights
-                requestAnimationFrame(() => {
-                    const shortestColumn = findShortestColumn(cols);
-                    shortestColumn.appendChild(photo_div);
-                });
             });
 
             photo.src = image_fp;
