@@ -59,6 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(cols);
 
         const image_fps = [
+            ["../assets/photography/webp_photos/r2_cat.JPG", "1"],
+            ["../assets/photography/webp_photos/r2_cat.JPG", "2"],
             ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty1"],
             ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty2"],
             ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty3"],
