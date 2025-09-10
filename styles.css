@@ -133,10 +133,6 @@ section.wide-sections {
     /* animation-delay: 4s; */
 }
 
-.hp-subsections#photography {
-    /* animation-delay: 4s; */
-}
-
 .container {
     align-items: center;
     justify-content: center;
@@ -306,23 +302,6 @@ input[type=submit] {
 a {
     color: black;
 }
-
-.footer {
-    display: flex;
-    justify-content: center;   /* centers the whole cluster */
-    align-items: center;       /* vertical alignment */
-    gap: 2rem;                 /* space between items */
-    padding: 20px 10px 15px;
-    font-size: 0.9rem;
-    color: #555;
-}
-
-.footer-text {
-    margin: 0;
-    display: inline;           /* keeps each <p> nice and compact */
-}
-
-
 
 h1.subsections-title {
     text-align: center;
