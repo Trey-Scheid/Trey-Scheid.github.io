@@ -59,11 +59,11 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(cols);
 
         const image_fps = [
-            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty"],
-            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty"],
-            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty"],
-            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty"],
-            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty"],
+            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty1"],
+            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty2"],
+            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty3"],
+            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty4"],
+            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty5"],
             // ["../assets/photography/webp_photos/phone_IMG_7589.HEIC","fish"],
             // ["../assets/photography/webp_photos/25_photographs_10DSC05622.webp", "#10"],
             // ["../assets/photography/webp_photos/25_photographs_11DSC05414.webp", "template_string, description"],
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // ["../assets/photography/webp_photos/phone_IMG_1188_Original.webp", "template_string, description"],
             // ["../assets/photography/webp_photos/phone_IMG_6237_Original.webp", "template_string, description"],
             // ["../assets/photography/webp_photos/phone_IMG_6238_Original.webp", "phone"]
-            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty"]
+            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty6"]
         ]
 
         
@@ -233,44 +233,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
 
-        // for (const image_fp_desc of image_fps) {
-        //     const image_fp = image_fp_desc[0]
-        //     const image_desc = image_fp_desc[1]
-
-        //     const photo_div = document.createElement('div');
-        //     photo_div.classList.add('gallery-photo');
-
-        //     const img_overlay = document.createElement('div');
-        //     img_overlay.classList.add("gallery-photo-overlay");
-
-        //     desc = document.createElement('p');
-        //     desc.classList.add("overlay-text");
-        //     desc.innerHTML = image_desc
-        //     img_overlay.appendChild(desc)
-
-        //     const photo = document.createElement('img');
-        //     photo.classList.add("photo");
-        //     // photo.loading = "lazy"; // Lazy loading for better performance
-            
-        //     // Attach event listener to the load event of each image
-        //     photo.addEventListener('load', function() {
-        //         // Append the loaded image to the photo_div
-        //         photo_div.appendChild(photo);
-                
-        //         // Find the shortest column
-        //         const shortestColumn = findShortestColumn(cols);
-                
-        //         // Append the photo_div to the shortest column
-        //         shortestColumn.appendChild(photo_div);
-        //         photo_div.appendChild(img_overlay);
-        //     });
-            
-        //     photo_div.appendChild(photo);
-        //     photo.src = image_fp;
-
-        // }
-
-
         for (const image_fp_desc of image_fps) {
             const image_fp = image_fp_desc[0];
             const image_desc = image_fp_desc[1];
@@ -288,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const photo = document.createElement('img');
             photo.classList.add("photo");
-            photo.loading = "lazy"; // good for perf
+            // photo.loading = "lazy"; // good for perf
 
             // Only append once the image is loaded
             photo.addEventListener('load', function() {
