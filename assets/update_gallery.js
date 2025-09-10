@@ -60,12 +60,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const image_fps = [
             ["../assets/photography/webp_photos/r2_cat.JPG", "1"],
-            ["../assets/photography/webp_photos/r2_cat.JPG", "2"],
-            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty1"],
-            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty2"],
-            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty3"],
-            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty4"],
-            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty5"],
+            ["../assets/photography/webp_photos/r2_cat.JPG", "2"]
+            // ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty1"],
+            // ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty2"],
+            // ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty3"],
+            // ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty4"],
+            // ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty5"],
             // ["../assets/photography/webp_photos/phone_IMG_7589.HEIC","fish"],
             // ["../assets/photography/webp_photos/25_photographs_10DSC05622.webp", "#10"],
             // ["../assets/photography/webp_photos/25_photographs_11DSC05414.webp", "template_string, description"],
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // ["../assets/photography/webp_photos/phone_IMG_1188_Original.webp", "template_string, description"],
             // ["../assets/photography/webp_photos/phone_IMG_6237_Original.webp", "template_string, description"],
             // ["../assets/photography/webp_photos/phone_IMG_6238_Original.webp", "phone"]
-            ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty6"]
+            // ["../assets/photography/webp_photos/DSC05709.JPG", "Dumpty6"]
         ]
 
         
