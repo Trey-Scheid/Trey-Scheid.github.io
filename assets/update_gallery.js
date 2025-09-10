@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ["../assets/photography/webp_photos/DSC05709.avif", "\"Happy Humpty\"<br>📍 Irvine, CA"],
             ["../assets/photography/webp_photos/25_photographs_10DSC05622.avif", "\"Say Cheese\"<br>📍 Dumpty House"],
             ["../assets/photography/webp_photos/25_photographs_11DSC05414.avif", "\"Faculty Kitchenette\"<br>📍 CSE bldg, UCSD"],
-            ["../assets/photography/webp_photos/25_photographs_14DSC05388.avif", "\"It <em>is<em> Rocket Science\"<br>📍 Rocket Propulsion Lab, UCSD"],
+            ["../assets/photography/webp_photos/25_photographs_14DSC05388.avif", "\"It <em>is</em> Rocket Science\"<br>📍 Rocket Propulsion Lab, UCSD"],
             ["../assets/photography/webp_photos/25_photographs_16DSC05318.avif", "\"Love Deefo\"<br>📍 Practice on Warren"],
             ["../assets/photography/webp_photos/25_photographs_17DSC05407.avif", "\"Hangry Eyes\"<br>📍 DataHacks 2024"],
             ["../assets/photography/webp_photos/25_photographs_18DSC05236.avif", "\"Color-Pattern-Line\"<br>📍 Epstein Family Amphitheater, UCSD"],
