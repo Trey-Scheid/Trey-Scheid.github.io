@@ -59,25 +59,25 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(cols);
 
         let image_fps = [
-            ["../assets/photography/webp/r2_tsuchinshan.jpeg", "\"The Comet\"<br>📍Crater Lake,<br>Oregon"],
-            ["../assets/photography/webp/r1_milkyway.JPG", "\"The Milkyway\"<br>📍SDSU Observatory,<br>Julian, CA"],
-            ["../assets/photography/webp/r1_towards_baybridge.JPG", "\"Towards Bay Bridge\"<br>📍California St,<br>San Francisco, CA"],
-            ["../assets/photography/webp/r1_chinatown_pacific.JPG", "\"Towards the Pacific\"<br>📍California St,<br>San Francisco, CA"],
-            ["../assets/photography/webp/r2_plastic_lens.JPG", "📍Gliderport,<br>San Diego, CA<br>shot with a disposable lens"],
-            ["../assets/photography/webp/r2_national_masjid.JPG", "National Masjid<br>📍Kuala Lumpur, Malaysia"],
-            ["../assets/photography/webp/r1_putra_masjid.JPG", "📍Putra Masjid,<br>Putrajaya, Malaysia"],
-            ["../assets/photography/webp/r1_merdeka_with_masjid.JPG", "Sultan Abdul Samad Building<br>📍Kuala Lumpur, Malaysia"],
-            ["../assets/photography/webp/r1_cat.JPG", "📍Subang Jaya,<br>Selangor, Malaysia"],
-            ["../assets/photography/webp/r2_bamboo_everyone.JPG", "Bamboo Forest<br>📍Kyoto, Japan"],
-            ["../assets/photography/webp/r1_blue_firework.JPG", "Tone River Firework Festival<br>📍Ibaraki, Japan"],
-            ["../assets/photography/webp/r1_purple_firework.JPG", "Tone River Firework Festival<br>📍Ibaraki, Japan"],
-            ["../assets/photography/webp/r1_blue_circle_firework.JPG", "Tone River Firework Festival<br>📍Ibaraki, Japan"],
-            ["../assets/photography/webp/r1_spider_lily.JPG", "\"Spider Lily\"<br>📍Ibaraki, Japan"],
-            ["../assets/photography/webp/r2_me_with_ethan.JPG", "Tone River banks<br>📍Ibaraki, Japan"],
-            ["../assets/photography/webp/r2_bamboo_forest.JPG", "Bamboo Forest<br>📍Kyoto, Japan"],
-            ["../assets/photography/webp/r1_skytree.JPG", "Tokyo Skytree<br>📍Asakusa, Tokyo"],
-            ["../assets/photography/webp/r1_jiji.JPG", "\"Grandpa\"<br>📍Little Italy,<br>San Diego, CA"],
-            ["../assets/photography/webp/r1_colorful_sunset.JPG", "📍Tierra del Sol,<br>San Diego, CA"]
+            ["../assets/photography/webp_photos/r2_tsuchinshan.jpeg", "\"The Comet\"<br>📍Crater Lake,<br>Oregon"],
+            ["../assets/photography/webp_photos/r1_milkyway.JPG", "\"The Milkyway\"<br>📍SDSU Observatory,<br>Julian, CA"],
+            ["../assets/photography/webp_photos/r1_towards_baybridge.JPG", "\"Towards Bay Bridge\"<br>📍California St,<br>San Francisco, CA"],
+            ["../assets/photography/webp_photos/r1_chinatown_pacific.JPG", "\"Towards the Pacific\"<br>📍California St,<br>San Francisco, CA"],
+            ["../assets/photography/webp_photos/r2_plastic_lens.JPG", "📍Gliderport,<br>San Diego, CA<br>shot with a disposable lens"],
+            ["../assets/photography/webp_photos/r2_national_masjid.JPG", "National Masjid<br>📍Kuala Lumpur, Malaysia"],
+            ["../assets/photography/webp_photos/r1_putra_masjid.JPG", "📍Putra Masjid,<br>Putrajaya, Malaysia"],
+            ["../assets/photography/webp_photos/r1_merdeka_with_masjid.JPG", "Sultan Abdul Samad Building<br>📍Kuala Lumpur, Malaysia"],
+            ["../assets/photography/webp_photos/r1_cat.JPG", "📍Subang Jaya,<br>Selangor, Malaysia"],
+            ["../assets/photography/webp_photos/r2_bamboo_everyone.JPG", "Bamboo Forest<br>📍Kyoto, Japan"],
+            ["../assets/photography/webp_photos/r1_blue_firework.JPG", "Tone River Firework Festival<br>📍Ibaraki, Japan"],
+            ["../assets/photography/webp_photos/r1_purple_firework.JPG", "Tone River Firework Festival<br>📍Ibaraki, Japan"],
+            ["../assets/photography/webp_photos/r1_blue_circle_firework.JPG", "Tone River Firework Festival<br>📍Ibaraki, Japan"],
+            ["../assets/photography/webp_photos/r1_spider_lily.JPG", "\"Spider Lily\"<br>📍Ibaraki, Japan"],
+            ["../assets/photography/webp_photos/r2_me_with_ethan.JPG", "Tone River banks<br>📍Ibaraki, Japan"],
+            ["../assets/photography/webp_photos/r2_bamboo_forest.JPG", "Bamboo Forest<br>📍Kyoto, Japan"],
+            ["../assets/photography/webp_photos/r1_skytree.JPG", "Tokyo Skytree<br>📍Asakusa, Tokyo"],
+            ["../assets/photography/webp_photos/r1_jiji.JPG", "\"Grandpa\"<br>📍Little Italy,<br>San Diego, CA"],
+            ["../assets/photography/webp_photos/r1_colorful_sunset.JPG", "📍Tierra del Sol,<br>San Diego, CA"]
         ]
         
         // // in order insertion
