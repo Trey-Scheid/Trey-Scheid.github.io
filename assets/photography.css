@@ -91,7 +91,7 @@ div.gallery-photo-overlay {
     display: block; /* Remove any default inline styling on the image */
 }
 
-.hp-subsections {
+.gp-subsections {
     padding-left: calc(15% + 10px);
     padding-right: calc(15% + 10px);
 }
@@ -100,7 +100,7 @@ div.gallery-photo-overlay {
     .overlay-text {
         font-size: 3.5vw;
     }
-    .hp-subsections {
+    .gp-subsections {
         padding-right: 15%;
         padding-left: 15%;
     }
