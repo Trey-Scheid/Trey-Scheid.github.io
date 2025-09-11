@@ -139,9 +139,9 @@ section.wide-sections {
 }
 
 .container {
-    align-items: center;
-    justify-content: center;
-    display: flex;
+    align-items: center; /* vertical alignment */
+    justify-content: center; /* centers the whole cluster */
+    display: flex; /* puts them all in the same line */
 
 }
 
@@ -161,6 +161,13 @@ section.wide-sections {
     /* justify-content: center; */
     width: 45%;
     margin-left: 8%;
+}
+
+.center-text-container{
+    /* justify-content: center; */
+    width: 90%;
+    margin-left: 6%;
+    margin-left: 6%;
 }
 
 
@@ -309,7 +316,7 @@ a {
 }
 
 .footer {
-    display: flex;
+    display: flex; /* puts them all in the same line */
     justify-content: center;   /* centers the whole cluster */
     align-items: center;       /* vertical alignment */
     gap: 2rem;                 /* space between items */
