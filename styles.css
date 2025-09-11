@@ -1,3 +1,4 @@
+/* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Foldit&family=Konkhmer+Sleokchher&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
@@ -330,6 +331,7 @@ h1.subsections-title {
     font-size: 1.8vw;
 }
 
+/* VERY SMALL DEVICE */
 @media screen and (max-width: 600px) {
     .intro {
         padding-left: 7%;
@@ -340,7 +342,7 @@ h1.subsections-title {
     }
 }
 
-
+/* MEDIUM SMALL DEVICE */
 @media screen and (max-width: 850px) {
     a {
         color: black;
