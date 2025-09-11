@@ -126,17 +126,17 @@ section.wide-sections {
     /* animation: fadeIn 2s; */
 }
 
-.hp-subsections#projects {
-    /* animation-delay: 2s; */
+/* .hp-subsections#projects {
+    animation-delay: 2s;
 }
 
 .hp-subsections#aboutme {
-    /* animation-delay: 4s; */
+    animation-delay: 4s;
 }
 
 .hp-subsections#photography {
-    /* animation-delay: 4s; */
-}
+    animation-delay: 4s;
+} */
 
 .container {
     align-items: center; /* vertical alignment */
