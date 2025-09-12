@@ -1,4 +1,5 @@
 let screenWidth = document.documentElement.clientWidth;
+
 document.addEventListener('DOMContentLoaded', function() {
     function updateGalleryLayout() {
         screenWidth = document.documentElement.clientWidth;
@@ -231,21 +232,21 @@ document.addEventListener('DOMContentLoaded', function() {
                     shortestH = getColHeight(col);
                 }
             }
-
             return shortestCol;
         }
 
         let galleryItems = []; // [{thumb, full, desc}, ...]
-        for (const i = 0; i < image_fps.length; i++) {
-            const image_fp_desc = image_fps[i]
-            const image_fp = image_fp_desc[0]
-            const image_desc = image_fp_desc[1]
+        for (let i = 0; i < image_fps.length; i++) {
+            const [image_fp, image_desc] = image_fps[i]
+            // const  = image_fp_desc[0]
+            // const  = image_fp_desc[1]
             const image_full_fp = image_fp.replace('/webp_photos/', '/full_res/');
 
             galleryItems.push({ thumb: image_fp, full: image_full_fp, desc: image_desc });
 
             const photo_div = document.createElement('div');
             photo_div.classList.add('gallery-photo');
+            photo_div.setAttribute('data-index', i)
 
             const img_overlay = document.createElement('div');
             img_overlay.classList.add("gallery-photo-overlay");
@@ -274,7 +275,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 photo_div.appendChild(img_overlay);
             });
             
-            photo_div.appendChild(photo);
+            // photo_div.appendChild(photo);
             photo.src = image_fp;
 
         }
@@ -285,113 +286,108 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial call to set up the gallery layout
     updateGalleryLayout();
 
-    // // Update gallery layout whenever the window is resized
+    // Update gallery layout whenever the window is resized
     window.addEventListener('resize', function() {
         console.log("this is the first call: " + screenWidth);
         if(screenWidth !== document.documentElement.clientWidth){ 
             updateGalleryLayout();
         }
     });
-});
 
+    // const galleryPhotos = document.querySelectorAll('.gallery-photo');
+    // galleryPhotos.forEach(function(galleryPhoto) {
+    //     // Attach a touchstart event listener to each gallery photo
+    //     galleryPhoto.addEventListener('touchstart', function(event) {
+    //         // Toggle the visibility of the overlay
+    //         console.log('touch detected')
+    //         const overlay = galleryPhoto.querySelector('.gallery-photo-overlay');
+    //         overlay.style.opacity = overlay.style.opacity === '1' ? '0' : '1';
+    //         event.preventDefault();
+    //     }, {passive: false});
+    // });
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     const galleryPhotos = document.querySelectorAll('.gallery-photo');
+    // Lightbox functionality
+    const gallery = document.querySelector('.gallery');
+    const dlg = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    const btnPrev = dlg.querySelector('.lb-prev');
+    const btnNext = dlg.querySelector('.lb-next');
+    const btnClose = dlg.querySelector('.lb-close');
 
-//     galleryPhotos.forEach(function(galleryPhoto) {
-//         // Attach a touchstart event listener to each gallery photo
-//         galleryPhoto.addEventListener('touchstart', function(event) {
-//             // Toggle the visibility of the overlay
-//             console.log('touch detected')
-//             const overlay = galleryPhoto.querySelector('.gallery-photo-overlay');
-//             overlay.style.opacity = overlay.style.opacity === '1' ? '0' : '1';
-//             event.preventDefault();
-//         }, {passive: false});
-//     });
-// });
+    let currentIndex = -1;
+    let lastFocus = null;
 
-document.addEventListener('DOMContentLoaded', function () {
-  const gallery = document.querySelector('.gallery');
-  const dlg = document.getElementById('lightbox');
-  const img = document.getElementById('lightbox-img');
-  const btnPrev = dlg.querySelector('.lb-prev');
-  const btnNext = dlg.querySelector('.lb-next');
-  const btnClose = dlg.querySelector('.lb-close');
+    function openAt(index) {
+        if (index < 0 || index >= galleryItems.length) return;
+        currentIndex = index;
 
-  let currentIndex = -1;
-  let lastFocus = null;
+        // Set full-res src lazily
+        const item = galleryItems[currentIndex];
+        img.removeAttribute('src'); // clear previous to force fresh load
+        img.alt = item.desc ? stripHTML(item.desc) : 'Photo';
+        img.src = item.full; // load now
 
-  function openAt(index) {
-    if (index < 0 || index >= galleryItems.length) return;
-    currentIndex = index;
-
-    // Set full-res src lazily
-    const item = galleryItems[currentIndex];
-    img.removeAttribute('src'); // clear previous to force fresh load
-    img.alt = item.desc ? stripHTML(item.desc) : 'Photo';
-    img.src = item.full; // load now
-
-    // Open dialog and manage focus
-    if (typeof dlg.showModal === 'function') {
-      lastFocus = document.activeElement;
-      dlg.showModal();
-      btnClose.focus();
-    } else {
-      // Fallback if <dialog> not supported: emulate overlay
-      dlg.setAttribute('open', '');
+        // Open dialog and manage focus
+        if (typeof dlg.showModal === 'function') {
+            lastFocus = document.activeElement;
+            dlg.showModal();
+            btnClose.focus();
+        } else {
+            // Fallback if <dialog> not supported: emulate overlay
+            dlg.setAttribute('open', '');
+        }
     }
-  }
 
-  function closeDlg() {
-    if (dlg.open) dlg.close();
-    if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
-    currentIndex = -1;
-  }
+    function closeDlg() {
+        if (dlg.open) dlg.close();
+        if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+        currentIndex = -1;
+    }
 
-  function showPrev() {
-    if (currentIndex < 0) return;
-    const nextIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-    openAt(nextIndex);
-  }
+    function showPrev() {
+        if (currentIndex < 0) return;
+        const nextIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+        openAt(nextIndex);
+    }
 
-  function showNext() {
-    if (currentIndex < 0) return;
-    const nextIndex = (currentIndex + 1) % galleryItems.length;
-    openAt(nextIndex);
-  }
+    function showNext() {
+        if (currentIndex < 0) return;
+        const nextIndex = (currentIndex + 1) % galleryItems.length;
+        openAt(nextIndex);
+    }
 
-  // Delegate click from gallery to items
-  gallery.addEventListener('click', function (e) {
-    const target = e.target.closest('.gallery-photo');
-    if (!target) return;
-    const index = parseInt(target.dataset.index, 10);
-    if (Number.isFinite(index)) openAt(index);
-  });
+    // Delegate click from gallery to items
+    gallery.addEventListener('click', function (e) {
+        const target = e.target.closest('.gallery-photo');
+        if (!target) return;
+        const index = parseInt(target.dataset.index, 10);
+        if (Number.isFinite(index)) openAt(index);
+    });
 
-  // Controls
-  btnClose.addEventListener('click', closeDlg);
-  btnPrev.addEventListener('click', showPrev);
-  btnNext.addEventListener('click', showNext);
+    // Controls
+    btnClose.addEventListener('click', closeDlg);
+    btnPrev.addEventListener('click', showPrev);
+    btnNext.addEventListener('click', showNext);
 
-  // Backdrop click to close (click outside image area closes)
-  dlg.addEventListener('click', function (e) {
-    const rect = img.getBoundingClientRect();
-    const clickedOutside =
-      e.clientX < rect.left || e.clientX > rect.right ||
-      e.clientY < rect.top || e.clientY > rect.bottom;
-    if (clickedOutside) closeDlg();
-  });
+    // Backdrop click to close (click outside image area closes)
+    dlg.addEventListener('click', function (e) {
+        const rect = img.getBoundingClientRect();
+        const clickedOutside =
+        e.clientX < rect.left || e.clientX > rect.right ||
+        e.clientY < rect.top || e.clientY > rect.bottom;
+        if (clickedOutside) closeDlg();
+    });
 
-  // Keyboard
-  dlg.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') { e.preventDefault(); closeDlg(); }
-    if (e.key === 'ArrowLeft') { e.preventDefault(); showPrev(); }
-    if (e.key === 'ArrowRight') { e.preventDefault(); showNext(); }
-  });
+    // Keyboard
+    dlg.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { e.preventDefault(); closeDlg(); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); showPrev(); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); showNext(); }
+    });
 
-  function stripHTML(html) {
-    const tmp = document.createElement('div');
-    tmp.innerHTML = html;
-    return tmp.textContent || tmp.innerText || '';
-  }
+    function stripHTML(html) {
+        const tmp = document.createElement('div');
+        tmp.innerHTML = html;
+        return tmp.textContent || tmp.innerText || '';
+    }
 });
