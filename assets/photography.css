@@ -113,9 +113,6 @@ div.gallery-photo-overlay {
 
 
 /* Lightbox dialog overlay */
-dialog:not([open]) {
-  display: none;
-}
 
 #lightbox::backdrop {
   background: rgba(0, 0, 0, 0.85);
@@ -136,6 +133,10 @@ dialog:not([open]) {
   grid-template-rows: 80px 1fr 80px;
   align-items: center;
   justify-items: center;
+}
+
+#lightbox:not([open]) {
+  display: none;
 }
 
 #lightbox-img {
