@@ -2,7 +2,7 @@ let screenWidth = document.documentElement.clientWidth;
 
 document.addEventListener('DOMContentLoaded', function() {
     let galleryItems = []; // [{thumb, full, desc}, ...]
-    
+
     function updateGalleryLayout() {
         screenWidth = document.documentElement.clientWidth;
         console.log(screenWidth);
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ["../assets/photography/webp_photos/camping_DSC02856.avif", "\"Ahhhhhhhh\"<br>📍 Mountain, CA"],
             ["../assets/photography/webp_photos/doneboth35.avif", "\"Addiction #8\""],
             ["../assets/photography/webp_photos/donerelcol+.58.avif", "\"Addiction #6\""],
-            ["../assets/photography/webp_photos/donerelcol.avif", "\"Addiction #1\""],
+            ["../assets/photography/webp_photos/donerelcol1.avif", "\"Addiction #1\""],
             ["../assets/photography/webp_photos/donerelcol2.avif", "\"Addiction #2\""],
             ["../assets/photography/webp_photos/donerelcol6.avif", "\"Addiction #3\""],
             ["../assets/photography/webp_photos/donerelcol7+.33.avif", "\"Addiction #4\""],
@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Update gallery layout whenever the window is resized
     window.addEventListener('resize', function() {
-        console.log("this is the first call: " + screenWidth);
+        console.log("resize: " + screenWidth);
         if(screenWidth !== document.documentElement.clientWidth){ 
             updateGalleryLayout();
         }
@@ -331,8 +331,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Open dialog and manage focus
         if (typeof dlg.showModal === 'function') {
             lastFocus = document.activeElement;
-            dlg.showModal();
-            btnClose.focus();
+            if (!dlg.open) {
+                dlg.showModal();
+                console.log('showing modal');
+            }
+            // btnClose.focus();
         } else {
             // Fallback if <dialog> not supported: emulate overlay
             dlg.setAttribute('open', '');
@@ -343,18 +346,21 @@ document.addEventListener('DOMContentLoaded', function() {
         if (dlg.open) dlg.close();
         if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
         currentIndex = -1;
+        console.log('closed modal');
     }
 
     function showPrev() {
         if (currentIndex < 0) return;
         const nextIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
         openAt(nextIndex);
+        console.log('show prev');
     }
 
     function showNext() {
         if (currentIndex < 0) return;
         const nextIndex = (currentIndex + 1) % galleryItems.length;
         openAt(nextIndex);
+        console.log('show next');
     }
 
     // Delegate click from gallery to items
@@ -372,11 +378,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Backdrop click to close (click outside image area closes)
     dlg.addEventListener('click', function (e) {
-        const rect = img.getBoundingClientRect();
-        const clickedOutside =
-        e.clientX < rect.left || e.clientX > rect.right ||
-        e.clientY < rect.top || e.clientY > rect.bottom;
-        if (clickedOutside) closeDlg();
+        // only close if clicking directly on dialog backdrop, not children (buttons)        
+        if (e.target === e.currentTarget) {
+            console.log('clicked outside image');
+            closeDlg();
+        }
     });
 
     // Keyboard
