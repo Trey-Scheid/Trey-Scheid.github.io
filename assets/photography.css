@@ -110,7 +110,13 @@ div.gallery-photo-overlay {
     }
 }
 
+
+
 /* Lightbox dialog overlay */
+dialog:not([open]) {
+  display: none;
+}
+
 #lightbox::backdrop {
   background: rgba(0, 0, 0, 0.85);
 }
