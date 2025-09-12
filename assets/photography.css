@@ -109,3 +109,76 @@ div.gallery-photo-overlay {
         padding-left: 15%;
     }
 }
+
+/* Lightbox dialog overlay */
+#lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+#lightbox {
+  border: none;
+  padding: 0;
+  background: transparent;
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  inset: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 80px 1fr 80px;
+  grid-template-rows: 80px 1fr 80px;
+  align-items: center;
+  justify-items: center;
+}
+
+#lightbox-img {
+  grid-column: 2;
+  grid-row: 2;
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+}
+
+/* Controls */
+.lb-close,
+.lb-prev,
+.lb-next {
+  position: relative;
+  z-index: 1;
+  background: rgba(0,0,0,0.55);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 28px;
+  line-height: 1;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+}
+
+.lb-close {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+  align-self: start;
+  margin: 16px;
+}
+
+.lb-prev {
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: center;
+}
+
+.lb-next {
+  grid-column: 3;
+  grid-row: 2;
+  justify-self: center;
+}
+
+/* Make sure it is above nav/overlays if needed */
+#lightbox {
+  z-index: 9999;
+}

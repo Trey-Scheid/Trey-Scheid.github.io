@@ -10,6 +10,13 @@
     <script src = '../assets/update_gallery.js'></script>
     <link rel="icon" type="image/x-icon" href="../assets/icons/vsco.svg">
 </head>
+<!-- Lightbox dialog -->
+<dialog id="lightbox" aria-label="Image preview" aria-modal="true">
+  <button class="lb-close" type="button" aria-label="Close preview">×</button>
+  <button class="lb-prev" type="button" aria-label="Previous image">‹</button>
+  <img id="lightbox-img" alt="">
+  <button class="lb-next" type="button" aria-label="Next image">›</button>
+</dialog>
 <body>
     <section class = 'top-header'>
         <a class = 'name' href = "../index.html">Trey Scheid</h1>
