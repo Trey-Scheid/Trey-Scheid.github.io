@@ -333,6 +333,10 @@ document.addEventListener('DOMContentLoaded', function() {
             lastFocus = document.activeElement;
             if (!dlg.open) {
                 dlg.showModal();
+                if (isTouchDevice) {
+                    dlg.addEventListener('touchstart', onTouchStart);
+                    dlg.addEventListener('touchend', onTouchEnd);
+                }
                 console.log('showing modal');
             }
             // btnClose.focus();
@@ -343,7 +347,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function closeDlg() {
-        if (dlg.open) dlg.close();
+        if (dlg.open) {
+            dlg.close();
+            if (isTouchDevice) {
+                dlg.removeEventListener('touchstart', onTouchStart);
+                dlg.removeEventListener('touchend', onTouchEnd);
+            }
+        }
         if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
         currentIndex = -1;
         console.log('closed modal');
@@ -396,5 +406,31 @@ document.addEventListener('DOMContentLoaded', function() {
         const tmp = document.createElement('div');
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || '';
+    }
+
+    // Touch (swipe) support
+    const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
+    function onTouchStart(e) {
+        const touch = e.touches[0];
+        startX = touch.clientX;
+        startY = touch.clientY;
+    }
+
+    function onTouchEnd(e) {
+        const touch = e.changedTouches[0];
+        const endX = touch.clientX;
+        const endY = touch.clientY;
+
+        const diffX = endX - startX;
+        const diffY = endY - startY;
+
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 30) {
+            if (diffX > 0) {
+            showPrev();
+            } else {
+            showNext();
+            }
+        }
     }
 });
