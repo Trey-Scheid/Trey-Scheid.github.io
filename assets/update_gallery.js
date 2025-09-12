@@ -1,6 +1,8 @@
 let screenWidth = document.documentElement.clientWidth;
 
 document.addEventListener('DOMContentLoaded', function() {
+    let galleryItems = []; // [{thumb, full, desc}, ...]
+    
     function updateGalleryLayout() {
         screenWidth = document.documentElement.clientWidth;
         console.log(screenWidth);
@@ -235,7 +237,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return shortestCol;
         }
 
-        let galleryItems = []; // [{thumb, full, desc}, ...]
         for (let i = 0; i < image_fps.length; i++) {
             const [image_fp, image_desc] = image_fps[i]
             // const  = image_fp_desc[0]
