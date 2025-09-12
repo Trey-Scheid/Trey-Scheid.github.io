@@ -3,8 +3,12 @@
 
 :root {
     font-family: "Poppins", "Trebuchet MS", Helvetica, sans-serif;
-    background-color: rgb(243, 243, 226);
+    background-color: rgb(249, 249, 249); /* rgb(243, 243, 226); */
     font-weight: 400;
+}
+
+* {
+  border-radius: 0 !important;
 }
 
 html {
@@ -190,11 +194,11 @@ span.grey {
 }
 
 span.day {
-    color: rgb(255, 157, 0);
+    color: rgb(255, 226, 97);
 }
 
 span.night {
-    color: rgb(0, 124, 124);
+    color: rgb(18, 144, 254);
 }
 
 img#intro-image {
